@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<title>Game | Knight's tour</title>
+		<link rel="stylesheet" href="public/style.css" />
+	</head>
+	<body>
+		<a class="backLink" href="index.html">&larr;</a>
+		<div class="container">
+			<h3 class="mainTitle">Knight's tour game</h3>
+			<div id="mainBlock">
+				<div class="controls">
+					<button title="Set random position" id="button" class="button">
+						<i class="fa-solid fa-shuffle"></i>
+					</button>
+					<button title="Clear Desk" id="clear" class="button">
+						<i class="fas fa-trash"></i>
+					</button>
+					<button title="Move forward" id="nextPos" class="button btn">
+						<i class="fa-solid fa-arrow-right"></i>
+					</button>
+					<button title="Move backwards" id="prevPos" class="button btn">
+						<i class="fa-solid fa-arrow-left"></i>
+					</button>
+					<div class="console_container">
+						<button title="Moves" id="toggleMoves" class="button btn movesBtn">
+							<i class="fa-solid fa-shoe-prints"></i>
+						</button>
+						<div id="console"></div>
+					</div>
+				</div>
+			</div>
+			<button type="button" class="infoLabel" id="info_btn">i</button>
+			<div id="info_dialog" class="dialog">
+				<p class="dialog_text">
+					A knight's tour is a sequence of moves of a knight on a chessboard
+					such that the knight visits every square exactly once. If the knight
+					ends on a square that is one knight's move from the beginning square
+					(so that it could tour the board again immediately, following the same
+					path), the tour is closed (or re-entrant); otherwise, it is open.
+				</p>
+				<a href="info.html">Learn more &rarr;</a>
+				<button id="close_dialog" type="button">x</button>
+			</div>
+		</div>
+		<script
+			src="https://kit.fontawesome.com/12d2fd1d04.js"
+			crossorigin="anonymous"
+		></script>
+		<script src="src/chessOOP.js"></script>
+	</body>
+</html>

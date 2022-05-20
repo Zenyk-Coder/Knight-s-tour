@@ -1,0 +1,351 @@
+:root {
+	/* --btn-color: #339dff; */
+	--btn-color: #ff0000;
+}
+
+body {
+	background-color: aliceblue;
+	overflow: hidden;
+	font-family: 'Montserrat', sans-serif;
+}
+.container {
+	max-height: 100vh;
+	padding-bottom: 20px;
+	overflow: hidden;
+	padding-bottom: 40px;
+}
+a,
+a:hover,
+a:active {
+	color: #000;
+	text-decoration: none;
+}
+#mainBlock {
+	position: relative;
+	display: flex;
+	margin: 10px;
+	width: 100vw;
+	justify-content: center;
+	border-radius: 3px;
+}
+.mainTitle {
+	margin: 0;
+	margin-top: 10px;
+	font-size: 48px;
+	font-weight: 500;
+	text-align: center;
+}
+.chessboard {
+	display: flex;
+	border: 1px solid #000;
+	margin: 20px;
+	padding: 34px;
+	width: 640px;
+	height: 640px;
+	background: url(images/board.jpg);
+	background-size: cover;
+	flex-wrap: wrap;
+}
+
+.section {
+	cursor: pointer;
+	width: 78px;
+	height: 78px;
+	border: 1px solid #000;
+	font-size: 50px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: #ff0000;
+	transition: all 0.2s ease-in-out;
+}
+.scale_up_center {
+	-webkit-animation: scale-up-center 0.4s cubic-bezier(0.55, 0.085, 0.68, 0.53)
+		both;
+	animation: scale-up-center 0.4s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
+}
+
+@keyframes scale-up-center {
+	0% {
+		-webkit-transform: scale(0.5);
+		transform: scale(0.5);
+		border-color: rgba(0, 0, 0, 0.25);
+	}
+	100% {
+		-webkit-transform: scale(1);
+		transform: scale(1);
+		border-color: rgba(0, 0, 0, 1);
+	}
+}
+
+.current {
+	color: transparent;
+	background: url(images/horse.png);
+	background-size: cover;
+}
+
+.button {
+	box-sizing: border-box;
+	appearance: none;
+	background-color: #fff;
+	border: 2px solid var(--btn-color);
+	border-radius: 0.6em;
+	color: var(--btn-color);
+	cursor: pointer;
+	display: flex;
+	align-self: center;
+	justify-content: center;
+	font-size: 1rem;
+	font-weight: 400;
+	line-height: 1;
+	padding: 1.2em 1.5em;
+	text-decoration: none;
+	text-align: center;
+	text-transform: uppercase;
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 700;
+	transition: box-shadow 300ms ease-in-out, color 300ms ease-in-out;
+}
+.button i {
+	width: 1.2em;
+	height: 1.2em;
+}
+.button:hover {
+	color: #fff;
+	outline: 0;
+	box-shadow: 0 0 40px 40px var(--btn-color) inset;
+}
+.button:focus {
+	outline: var(--btn-color);
+}
+/* .movesBtn {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 1.2em;
+}
+.movesBtn i {
+	width: 1.2em;
+	height: 1.2em;
+} */
+.console_container {
+	position: absolute;
+	transform: translateY(20px);
+}
+#console {
+	position: absolute;
+	top: 0;
+	left: 90px;
+	border-radius: 5px;
+	background-color: #fff;
+	padding: 12px 32px;
+	display: none;
+	flex-direction: column;
+	width: 150px;
+	height: 280px;
+	line-height: 48px;
+	border: 1px solid #000;
+	margin-top: 20px;
+	font-size: 25px;
+	text-align: center;
+	overflow: scroll;
+	/* justify-content: center; */
+}
+.visible {
+	display: flex !important;
+}
+#console button {
+	min-height: 20px;
+}
+#console p {
+	margin: 0;
+}
+#console p:hover {
+	color: var(--btn-color);
+}
+#button {
+	margin-top: 50px;
+}
+#clear {
+	margin-top: 30px;
+}
+#nextPos {
+	margin-top: 30px;
+}
+#prevPos {
+	margin-top: 30px;
+}
+.controls {
+	position: absolute;
+	right: calc((100vw - 900px) / 2);
+}
+
+#infoBtn {
+	display: none;
+}
+.infoLabel {
+	position: fixed;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: help;
+	right: 20px;
+	top: 20px;
+	width: 20px;
+	height: 20px;
+	border: 1px solid black;
+	border-radius: 50%;
+	background-color: antiquewhite;
+	transition: 0.3s ease-in-out;
+}
+.infoLabel:hover {
+	background-color: white;
+}
+
+.dialog {
+	position: fixed;
+	display: none;
+	top: 50px;
+	right: 20px;
+	width: 400px;
+	padding: 10px 20px 20px;
+	max-height: 500px;
+	background-color: bisque;
+	border-radius: 5px;
+	box-shadow: 0 4px 4px rgba(0, 0, 0, 0.7);
+}
+.dialog button {
+	position: fixed;
+	cursor: pointer;
+	top: 60px;
+	right: 30px;
+	border: 1px solid black;
+	background-color: transparent;
+	border-radius: 50px;
+	transition: 0.3s ease-in-out;
+}
+.dialog button:hover {
+	background-color: white;
+}
+.dialog a {
+	font-size: 16px;
+	line-height: 16px;
+	border-bottom: 2px solid white;
+	transition: all 0.3s ease-in-out;
+}
+
+.dialog a:hover {
+	border-color: #000;
+}
+
+.active {
+	display: block !important;
+}
+
+#cooltoast-container {
+	position: fixed;
+	bottom: 50px;
+	left: 0;
+	width: auto;
+	/*   font-family: 'Helvetica'; */
+}
+
+.cooltoast-toast {
+	position: relative;
+	padding: 8px 12px;
+	margin: 16px;
+	border-radius: 8px;
+	background: #f5f5f5;
+	cursor: pointer;
+	box-shadow: 0 1px 6px rgba(0, 0, 0, 0.08), 0 1px 3px rgba(0, 0, 0, 0.19);
+	animation-duration: 0.3s;
+	animation-name: cooltoast;
+	animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+.cooltoast-fadeOut {
+	animation-name: cooltoastFadeOut;
+	animation-duration: 0.3s;
+	animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+	animation-fill-mode: forwards;
+}
+
+#cooltoast-container p,
+#cooltoast-container h4 {
+	margin: 3px 0 !important;
+}
+
+.cooltoast-title {
+	font-weight: 700;
+	font-size: 15px;
+	margin-bottom: 10px;
+}
+
+.cooltoast-text {
+	font-size: 14px;
+	color: #777;
+}
+
+.cooltoast-icon {
+	position: absolute;
+	top: 5px;
+	left: -40px;
+	width: 50px;
+	height: 50px;
+	border-radius: 100%;
+	background: #fff;
+}
+
+.cooltoast-toast a,
+.cooltoast-toast a:hover {
+	color: #549edb !important;
+	text-decoration: none !important;
+}
+
+/** toast types */
+.cooltoast-success {
+	border-bottom: 2px solid #51c625;
+}
+
+.cooltoast-warning {
+	border-bottom: 2px solid #db9215;
+}
+
+.cooltoast-error {
+	border-bottom: 2px solid #db2b1d;
+}
+
+.cooltoast-info {
+	border-bottom: 2px solid #27abdb;
+}
+
+@keyframes cooltoast {
+	from {
+		transform: translate3d(400px, 0, 0);
+		opacity: 0;
+	}
+	to {
+		transform: translate3d(0, 0, 0);
+		opacity: 1;
+	}
+}
+
+@keyframes cooltoastFadeOut {
+	from {
+		transform: translate3d(0, 0, 0);
+		opacity: 1;
+	}
+	to {
+		transform: translate3d(-400px, 0, 0);
+		opacity: 0;
+	}
+}
+.backLink {
+	position: absolute;
+	top: 20px;
+	left: 20px;
+	font-size: 24px;
+}
+.backLink:hover {
+	color: var(--btn-color);
+}

@@ -1,24 +1,154 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>Хід коня</title>
-	<link rel="stylesheet" href="style.css">
-</head>
-<body>
-	<div id="mainBlock">
-		<div id="first-block">
-			<button id="button" class="button">Random Pos</button>
-			<button id="clear" class="button">Clear Desk</button>
-			<button id="nextPos" class="button btn">+1 pos</button>
-			<button id="prevPos" class="button btn">-1 pos</button>
-			<div id="console">
-			
-			</div>
-		</div>
-	</div>
-	<!--<script src="cheess.js"></script>-->
-	<script src="chessOOP.js"></script>
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="public/infostyle.css" />
+		<title>Info | Knight's tour</title>
+	</head>
 
-</body>
+	<body>
+		<div class="container">
+			<h2>Let's read some info about Knight's Tour problem!</h2>
+			<a class="tryButton" href="game.html">Try now!</a>
+			<div class="content">
+				<h3>Knight's tour</h3>
+
+				<p>
+					A knight's tour is a sequence of moves of a knight on a chessboard
+					such that the knight visits every square exactly once. If the knight
+					ends on a square that is one knight's move from the beginning square
+					(so that it could tour the board again immediately, following the same
+					path), the tour is closed (or re-entrant); otherwise, it is open. The
+					knight's tour problem is the mathematical problem of finding a
+					knight's tour. Creating a program to find a knight's tour is a common
+					problem given to computer science students. Variations of the knight's
+					tour problem involve chessboards of different sizes than the usual 8 ×
+					8, as well as irregular (non-rectangular) boards.
+				</p>
+			</div>
+			<div class="content">
+				<h3>Theory</h3>
+				<p>
+					The knight's tour problem is an instance of the more general
+					Hamiltonian path problem in graph theory. The problem of finding a
+					closed knight's tour is similarly an instance of the Hamiltonian cycle
+					problem. Unlike the general Hamiltonian path problem, the knight's
+					tour problem can be solved in linear time.
+				</p>
+			</div>
+			<div class="content">
+				<h3>Existence</h3>
+				<p>
+					Schwenk proved that for any m × n board with m ≤ n, a closed knight's
+					tour is always possible unless one or more of these three conditions
+					are met:
+				</p>
+				<ol>
+					<li>m and n are both odd</li>
+					<li>m = 1, 2, or 4</li>
+					<li>m = 3 and n = 4, 6, or 8.</li>
+				</ol>
+				<p>
+					Cull et al. and Conrad et al. proved that on any rectangular board
+					whose smaller dimension is at least 5, there is a (possibly open)
+					knight's tour.
+				</p>
+			</div>
+			<div class="content">
+				<h3>Number of tours</h3>
+				<p>
+					On an 8 × 8 board, there are exactly 26,534,728,821,064 directed
+					closed tours (i.e. two tours along the same path that travel in
+					opposite directions are counted separately, as are rotations and
+					reflections). The number of undirected closed tours is half this
+					number, since every tour can be traced in reverse. There are 9,862
+					undirected closed tours on a 6 × 6 board.
+				</p>
+			</div>
+			<div class="content">
+				<h3>Finding tours with computers</h3>
+				<p>
+					There are several ways to find a knight's tour on a given board with a
+					computer. Some of these methods are algorithms while others are
+					heuristics.
+				</p>
+				<p>
+					<b>Brute-force algorithms</b><br />
+					A brute-force search for a knight's tour is impractical on all but the
+					smallest boards. For example, there are approximately 4×1051 possible
+					move sequences on an 8 × 8 board, and it is well beyond the capacity
+					of modern computers (or networks of computers) to perform operations
+					on such a large set. However, the size of this number is not
+					indicative of the difficulty of the problem, which can be solved "by
+					using human insight and ingenuity ... without much difficulty."
+				</p>
+				<p>
+					<b>Divide-and-conquer algorithms</b><br />
+					A brute-force search for a knight's tour is impractical on all but the
+					smallest boards. For example, there are approximately 4×1051 possible
+					move sequences on an 8 × 8 board, and it is well beyond the capacity
+					of modern computers (or networks of computers) to perform operations
+					on such a large set. However, the size of this number is not
+					indicative of the difficulty of the problem, which can be solved "by
+					using human insight and ingenuity ... without much difficulty."
+				</p>
+				<p>
+					<b>Warnsdorff's rule</b><br />
+					Warnsdorff's rule is a heuristic for finding a single knight's tour.
+					The knight is moved so that it always proceeds to the square from
+					which the knight will have the fewest onward moves. When calculating
+					the number of onward moves for each candidate square, we do not count
+					moves that revisit any square already visited. It is possible to have
+					two or more choices for which the number of onward moves is equal;
+					there are various methods for breaking such ties, including one
+					devised by Pohl and another by Squirrel and Cull. This rule may also
+					more generally be applied to any graph. In graph-theoretic terms, each
+					move is made to the adjacent vertex with the least degree. Although
+					the Hamiltonian path problem is NP-hard in general, on many graphs
+					that occur in practice this heuristic is able to successfully locate a
+					solution in linear time. The knight's tour is such a special case. The
+					heuristic was first described in "Des Rösselsprungs einfachste und
+					allgemeinste Lösung" by H. C. von Warnsdorff in 1823. A computer
+					program that finds a knight's tour for any starting position using
+					Warnsdorff's rule was written by Gordon Horsington and published in
+					1984 in the book Century/Acorn User Book of Computer Puzzles.
+				</p>
+				<p>
+					<b>Neural network solutions</b><br />
+					The knight's tour problem also lends itself to being solved by a
+					neural network implementation. The network is set up such that every
+					legal knight's move is represented by a neuron, and each neuron is
+					initialized randomly to be either "active" or "inactive" (output of 1
+					or 0), with 1 implying that the neuron is part of the solution. Each
+					neuron also has a state function (described below) which is
+					initialized to 0. When the network is allowed to run, each neuron can
+					change its state and output based on the states and outputs of its
+					neighbors (those exactly one knight's move away) according to the
+					following transition rules:
+					<span
+						><img
+							width="250"
+							height="125"
+							alt="neural network rules"
+							src="public/images/neural.png"
+					/></span>
+					where <i>t</i> represents discrete intervals of time,
+					<i>U(N<sub>i,j</sub>)</i> is the state of the neuron connecting square
+					<i>i</i> to square <i>j</i>, <i>V(N<sub>i,j</sub>)</i> is the output
+					of the neuron from <i>i</i> to <i>j</i>, and
+					<i>G(N<sub>i,j</sub>)</i> is the set of neighbors of the neuron.
+					Although divergent cases are possible, the network should eventually
+					converge, which occurs when no neuron changes its state from time
+					<i>t</i> to <i>t + 1</i>. When the network converges, either the
+					network encodes a knight's tour or a series of two or more independent
+					circuits within the same board.
+				</p>
+			</div>
+			<a class="tryButton" href="game.html">Try out the game!</a>
+			<br />
+			<br />
+		</div>
+	</body>
 </html>

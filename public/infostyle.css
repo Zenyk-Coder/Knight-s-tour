@@ -1,0 +1,65 @@
+.container {
+	font-family: sans-serif;
+	max-width: 800px;
+	margin: 0 auto;
+	display: flex;
+	flex-direction: column;
+}
+h2 {
+	text-align: center;
+	font-size: 48px;
+	font-weight: 500;
+}
+a,
+a:hover,
+a:active {
+	color: #000;
+}
+.tryButton {
+	margin: 0 auto;
+	display: inline-block;
+	background: #339dff;
+	color: #fff;
+	text-decoration: none;
+	font-size: 13px;
+	line-height: 38px;
+	border-radius: 50px;
+	-webkit-transition: all 0.3s;
+	transition: all 0.3s;
+	width: 170px;
+	text-align: center;
+}
+
+.tryButton:hover {
+	background: #fff;
+	color: #339dff;
+	box-shadow: 0 4px 4px rgba(83, 100, 255, 0.32);
+}
+.content {
+	margin: 20px 0;
+	padding: 20px 25px;
+	position: relative;
+	box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+	transition: all 0.3s ease-in-out;
+}
+.content p {
+	position: relative;
+}
+.content p::before {
+	content: '';
+	position: absolute;
+	left: -15px;
+	width: 2px;
+	background-color: #2978ff;
+	height: 100%;
+}
+.content:hover {
+	box-shadow: 0 2px 2px #2978ff7d;
+}
+.content h3 {
+	transition: all 0.3s ease-in-out;
+}
+.content:hover h3,
+.content:hover b {
+	color: #2979ff;
+}
