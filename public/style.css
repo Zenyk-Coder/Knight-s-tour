@@ -179,7 +179,16 @@ a:active {
 	position: absolute;
 	right: calc((100vw - 900px) / 2);
 }
-
+.backdrop {
+	position: fixed;
+	z-index: 100;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	background-color: rgba(0, 0, 0, 0.25);
+	display: none;
+}
 #infoBtn {
 	display: none;
 }
@@ -213,6 +222,7 @@ a:active {
 	background-color: bisque;
 	border-radius: 5px;
 	box-shadow: 0 4px 4px rgba(0, 0, 0, 0.7);
+	z-index: 110;
 }
 .dialog button {
 	position: fixed;

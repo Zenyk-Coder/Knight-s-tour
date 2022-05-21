@@ -439,6 +439,9 @@ chess.init()
 const infoBtn = document.getElementById('info_btn')
 const infoDialog = document.getElementById('info_dialog')
 const closeDialog = document.getElementById('close_dialog')
+const backdrop = document.createElement('div')
+backdrop.classList.add('backdrop')
+document.body.appendChild(backdrop)
 const toggleMovesButton = document.getElementById('toggleMoves')
 toggleMovesButton.onclick = () => {
 	const documentConsole = document.getElementById('console')
@@ -449,8 +452,14 @@ toggleMovesButton.onclick = () => {
 	console.log(documentConsole)
 }
 infoBtn.onclick = () => {
+	backdrop.classList.toggle('active')
 	infoDialog.classList.toggle('active')
 }
 closeDialog.onclick = () => {
+	backdrop.classList.remove('active')
+	infoDialog.classList.remove('active')
+}
+backdrop.onclick = () => {
+	backdrop.classList.remove('active')
 	infoDialog.classList.remove('active')
 }
